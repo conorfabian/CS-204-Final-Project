@@ -1,0 +1,8 @@
+time_seconds,resolution_width,resolution_height,bitrate_kbps,notes
+0,1920,1080,5000,initial_startup
+5,1920,1080,5000,quality_stabilized
+45,1920,1080,5000,before_drop
+50,1280,720,2500,after_drop
+90,1280,720,2500,before_recovery
+95,1920,1080,4500,after_recovery
+135,1920,1080,5000,end

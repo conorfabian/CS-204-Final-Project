@@ -1,0 +1,47 @@
+Trial Observations Template
+===========================
+
+TRIAL NUMBER: ___________
+DATE: ___________
+VIDEO URL: ___________
+NETWORK TRACE: [baseline / experimental]
+
+PHASE 1: INITIAL STATE (0-45s, 20 Mbps)
+========================================
+Starting quality: ___________
+Time to max quality: _______ seconds
+Steady-state quality: ___________
+Buffer level at T=45s: _______ seconds
+Smooth playback? [yes/no]: ___________
+
+PHASE 2: BANDWIDTH DROP (45-90s, 1.5 Mbps)
+==========================================
+First quality switch at: T=_______ seconds
+Quality after switch: ___________
+Additional switches: ___________
+Final quality in phase: ___________
+Lowest buffer level: _______ seconds
+Any stalls? [yes/no]: ___________
+If stalled, duration: _______ seconds
+
+PHASE 3: RECOVERY (90-135s, 20 Mbps)
+====================================
+First quality increase at: T=_______ seconds
+Quality after switch: ___________
+Additional switches: ___________
+Final quality at T=135s: ___________
+Buffer level at T=135s: _______ seconds
+Returned to original quality? [yes/no]: ___________
+
+SUMMARY
+=======
+Total quality switches: _______
+Total stalls: _______
+Lowest quality seen: ___________
+Highest quality seen: ___________
+Time to adapt to drop: ~_______ seconds
+Time to recover: ~_______ seconds
+
+ISSUES/NOTES
+============
+[Any problems, interesting observations, or anomalies]
