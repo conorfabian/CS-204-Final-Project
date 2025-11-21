@@ -1,9 +1,0 @@
-time_seconds,buffer_seconds,notes
-0,0,playback_start
-10,12,building
-30,18,stable
-45,20,before_drop
-60,12,during_drop
-90,10,before_recovery
-120,18,recovering
-135,20,end

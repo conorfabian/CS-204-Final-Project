@@ -1,0 +1,42 @@
+Trial 001 Metadata
+==================
+
+TRIAL INFORMATION
+- Trial Number: 001
+- Trial Type: BASELINE (no network shaping)
+- Date: November 2025
+- Time of Day: Afternoon
+- Duration: 135 seconds
+
+SYSTEM INFORMATION
+- Operating System: macOS 14.x
+- Browser: Google Chrome (latest stable)
+- Chrome Profile: Isolated test profile
+- Network Interface: Wi-Fi
+- ISP: Residential broadband
+
+VIDEO INFORMATION
+- Platform: YouTube
+- Video URL: [standard test video]
+- Video Length: >3 minutes
+- Available Qualities: 360p, 480p, 720p, 1080p
+
+NETWORK CONFIGURATION
+- Network Shaping: DISABLED (baseline)
+- Natural Bandwidth: ~100+ Mbps
+- Natural Latency: ~15-25ms
+
+DATA COLLECTION
+- Method: chrome://media-internals
+- Quality recorded at: Manual timestamps
+- Buffer recorded at: Manual timestamps
+
+DATA FILES
+- quality_timeline.csv: YES
+- buffer_timeline.csv: YES
+- observations.txt: YES
+
+NOTES
+- First baseline trial
+- Browser cache cleared before trial
+- No background network activity during trial

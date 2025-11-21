@@ -18,12 +18,14 @@ def process_trial(trial_num):
     """
     print(f"Processing trial {trial_num}...")
 
+    # Read from raw directory, write to processed directory
+    raw_dir = Path(f'data/raw/trial_{trial_num}')
     proc_dir = Path(f'data/processed/trial_{trial_num}')
     proc_dir.mkdir(parents=True, exist_ok=True)
 
-    # Check for required files
-    quality_file = proc_dir / 'quality_timeline.csv'
-    buffer_file = proc_dir / 'buffer_timeline.csv'
+    # Check for required files in raw directory
+    quality_file = raw_dir / 'quality_timeline.csv'
+    buffer_file = raw_dir / 'buffer_timeline.csv'
 
     if not quality_file.exists():
         print(f"ERROR: {quality_file} not found!")
@@ -52,7 +54,7 @@ def process_trial(trial_num):
         how='left'
     )
     timeline[['resolution_width', 'resolution_height', 'bitrate_kbps']] = \
-        timeline[['resolution_width', 'resolution_height', 'bitrate_kbps']].fillna(method='ffill')
+        timeline[['resolution_width', 'resolution_height', 'bitrate_kbps']].ffill()
 
     # Merge buffer data (interpolate)
     timeline = timeline.merge(

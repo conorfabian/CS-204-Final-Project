@@ -1,0 +1,42 @@
+Trial 005 Observations - EXPERIMENTAL (With Network Shaping)
+============================================================
+Date: November 2025
+Type: Experimental trial - standardized network trace applied
+      Phase 1: 20 Mbps | Phase 2: 1.5 Mbps | Phase 3: 20 Mbps
+
+PHASE 1 (0-45 seconds) - 20 Mbps bandwidth
+- Started at 360p, took a bit longer to ramp up
+- Reached 720p around T=19
+- Stayed at 720p, did not reach 1080p before bandwidth change
+- Buffer built to ~27 seconds
+
+PHASE 2 (45-90 seconds) - 1.5 Mbps bandwidth DROP
+- Bandwidth dropped at T=45
+- Delayed response - stayed at 720p until T=54 (9 second delay)
+- Quality progression: 720p -> 480p (T=61) -> 360p (T=79)
+- Buffer got VERY low - minimum around 4.3 seconds at T=88
+- This was the closest to a stall across all trials!
+- Bitrate dropped to minimum of 756 kbps
+
+PHASE 3 (90-135 seconds) - 20 Mbps RECOVERY
+- Recovery started at T=90, but buffer was critically low
+- Very slow initial recovery - stayed at 360p until T=105
+- YouTube prioritized buffer over quality initially
+- Quality increases: 360p -> 480p (T=105) -> 720p (T=127)
+- Buffer recovered to ~26 seconds
+- Did NOT return to peak quality in observation window
+
+SUMMARY
+- Total quality switches: 5
+- Stalls/rebuffering: 0 (but VERY close at 4.3s buffer!)
+- Maximum quality: 720p at 4123 kbps
+- Minimum quality: 360p at 756 kbps
+- Adaptation delay: ~9 seconds
+- Recovery behavior: Very conservative due to low buffer
+- Notes: This trial showed the most stress on the buffer.
+         Came within seconds of a potential stall event.
+         YouTube's ABR algorithm successfully prevented stalling
+         by aggressively dropping quality. Recovery was slow
+         because priority was rebuilding buffer safety margin.
+         Interesting to note the delayed adaptation compared to
+         trial 004 despite similar initial conditions.

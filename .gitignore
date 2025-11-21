@@ -1,5 +1,36 @@
-/.claude
-/CLAUDE.md
-/PLAN.md
-/README_FOR_CLAUDE_CODE.md
-/TASKS.md
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.Python
+venv/
+env/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Large files (uncomment if needed)
+# data/raw/*/*.har
