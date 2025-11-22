@@ -1,54 +1,24 @@
 EXPERIMENT CHECKLIST
-====================
 
-PRE-EXPERIMENT (5 min before):
-□ Computer plugged in or fully charged
-□ Do Not Disturb mode enabled
-□ All unnecessary apps closed
-□ Chrome cache cleared
-□ Trial directory created: data/raw/trial_XXX/
-□ Three terminals ready:
-    Terminal 1: Network control
-    Terminal 2: Timer/notes
-    Terminal 3: Commands
-□ Notepad/text editor ready for observations
-□ YouTube video URL documented
-□ Stopwatch or timer ready
+Before:
+- Close unnecessary apps
+- Clear Chrome cache
+- Create data/raw/trial_XXX/ directory
+- Have stopwatch ready
 
-CHROME SETUP:
-□ Chrome launched with: ./scripts/collection/launch_chrome.sh
-□ YouTube video loaded (PAUSED at start)
-□ chrome://media-internals open in separate tab
-□ DevTools Network tab open (Cmd+Option+I)
+Setup:
+- Run ./scripts/collection/launch_chrome.sh
+- Load YouTube video (paused)
+- Open chrome://media-internals
+- Run ./scripts/network/manual_control.sh, select HIGH
 
-NETWORK SETUP:
-□ Network control script running: ./scripts/network/manual_control.sh
-□ Verified with speedtest (optional)
-□ Started in HIGH mode (20 Mbps)
+During (135s):
+- T=0: Start video
+- T=45: Switch to LOW
+- T=90: Switch to HIGH
+- T=135: Stop video
 
-DURING EXPERIMENT (135 seconds):
-□ T=0:   Started video playback
-□ T=0-45:  Monitoring quality in media-internals
-□ T=45:    Switched to LOW (1.5 Mbps)
-□ T=45-90: Watching for quality drops
-□ T=90:    Switched back to HIGH (20 Mbps)
-□ T=90-135: Watching for quality recovery
-□ T=135:   Stopped video
-
-OBSERVATIONS RECORDED:
-□ Initial quality selected
-□ Quality switch times
-□ Quality levels before/after switches
-□ Buffer level changes
-□ Any stalls or buffering events
-
-POST-EXPERIMENT (immediately after):
-□ Exported chrome://media-internals data
-□ Saved DevTools HAR file
-□ Cleaned up network: ./scripts/network/cleanup.sh
-□ Completed observations.txt
-□ Completed summary.txt
-□ Screenshots saved (if any)
-□ Data backed up
-
-TRIAL COMPLETE: □
+After:
+- Export media-internals data
+- Run ./scripts/network/cleanup.sh
+- Record observations in trial folder

@@ -1,8 +1,8 @@
-# YouTube Adaptive Bitrate Streaming Analysis
+# YouTube ABR Streaming Analysis
 
-Analyzing YouTube's ABR streaming behavior under controlled network conditions.
+This project looks at how YouTube handles video quality when network conditions change. We throttle bandwidth and see how the player responds.
 
-**CS204 Final Project** | University of California, Riverside | Fall 2025
+CS204 Final Project - UCR Fall 2025
 
 ## Network Trace
 
@@ -77,13 +77,13 @@ python3 scripts/visualization/plot_comparison.py    # Cross-trial comparison
 ## Results Summary
 
 | Metric | Baseline | Experimental | Change |
-|--------|----------|--------------|--------|
+|---|---|---|---|
 | Avg Bitrate | 4800 kbps | 2300 kbps | -52% |
 | Quality Switches | 10-11 | 13-16 | +45% |
 | Avg Buffer | 28s | 16s | -43% |
 
-**Key Findings:**
-- YouTube waited 5-13s after bandwidth drop before reducing quality
-- Quality drops triggered when buffer fell below ~20s
-- No rebuffering despite 93% bandwidth reduction
-- Conservative recovery: did not return to 1080p in 45s window
+**What we found:**
+- theres about a 5-13 second delay before YouTube drops quality after bandwidth goes down
+- quality usually drops when buffer gets below 20 seconds or so
+- we never got any rebuffering even with the big bandwidth drop which was interesting
+- YouTube is pretty conservative about going back up to high quality - didn't get back to 1080p in our recovery window

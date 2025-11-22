@@ -1,21 +1,9 @@
 #!/bin/bash
-
-echo "Network Shaping Verification"
-echo "=============================="
+echo "PF status:"
+sudo pfctl -s info | grep Status
 echo ""
-
-echo "Packet Filter Status:"
-sudo pfctl -s info
-echo ""
-
-echo "Dummynet Pipes:"
+echo "Pipes:"
 sudo dnctl pipe list
 echo ""
-
-echo "Active Rules:"
+echo "Rules:"
 sudo pfctl -s rules | grep dummynet
-echo ""
-
-echo "To test bandwidth:"
-echo "  Visit speedtest.net or fast.com"
-echo ""
